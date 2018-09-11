@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: 2010-09-09
 Transform: AWS::Serverless-2016-10-31
-Description: Stackery Serverless API Example Stack 
+Description: Stackery Serverless API Example Stack
 Resources:
   function61D00F31:
     Type: AWS::Serverless::Function
@@ -17,6 +17,8 @@ Resources:
       Tracing: Active
       Policies:
         - AWSXrayWriteOnlyAccess
+        - LambdaInvokePolicy:
+            FunctionName: !Ref function2975B6A8
       Events:
         apiFE76C470:
           Type: Api
@@ -24,6 +26,10 @@ Resources:
             Path: /
             Method: GET
             RestApiId: !Ref apiFE76C470
+      Environment:
+        Variables:
+          FUNCTION_NAME: !Ref function2975B6A8
+          FUNCTION_ARN: !GetAtt function2975B6A8.Arn
     Metadata:
       StackeryName: getWelcomePage
   apiFE76C470:
@@ -62,6 +68,23 @@ Resources:
         - AWSXrayWriteOnlyAccess
     Metadata:
       StackeryName: logErrors
+  function2975B6A8:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub ${AWS::StackName}-function2975B6A8
+      Description: !Sub
+        - Stackery Stack ${StackeryStackTagName} Environment ${StackeryEnvironmentTagName} Function ${ResourceName}
+        - ResourceName: innerFunction
+      CodeUri: src/function2975B6A8
+      Handler: index.handler
+      Runtime: nodejs8.10
+      MemorySize: 256
+      Timeout: 30
+      Tracing: Active
+      Policies:
+        - AWSXrayWriteOnlyAccess
+    Metadata:
+      StackeryName: innerFunction
 Parameters:
   StackeryStackTagName:
     Type: String
