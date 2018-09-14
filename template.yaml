@@ -92,7 +92,7 @@ Resources:
       Description: !Sub
         - Stackery Stack ${StackeryStackTagName} Environment ${StackeryEnvironmentTagName} Function ${ResourceName}
         - ResourceName: runthething
-      CodeUri: src/function7DAAF579
+      CodeUri: src/runthething
       Handler: index.handler
       Runtime: nodejs8.10
       MemorySize: 3008
