@@ -1,0 +1,21 @@
+{
+  "presets": [
+    "env",
+    "flow"
+  ],
+  "plugins": [
+    "source-map-support",
+    [
+      "js-logger",
+      {
+        "format": {
+          "level": 1,
+          "separator": ".",
+          "extensions": [ ".js", ".jsx" ],
+          "project": false
+        }
+      }
+    ],
+    "testable"
+  ]
+}
