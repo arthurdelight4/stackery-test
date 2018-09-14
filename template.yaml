@@ -85,6 +85,23 @@ Resources:
         - AWSXrayWriteOnlyAccess
     Metadata:
       StackeryName: innerFunction
+  function7DAAF579:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub ${AWS::StackName}-function7DAAF579
+      Description: !Sub
+        - Stackery Stack ${StackeryStackTagName} Environment ${StackeryEnvironmentTagName} Function ${ResourceName}
+        - ResourceName: runthething
+      CodeUri: src/function7DAAF579
+      Handler: index.handler
+      Runtime: nodejs8.10
+      MemorySize: 3008
+      Timeout: 30
+      Tracing: Active
+      Policies:
+        - AWSXrayWriteOnlyAccess
+    Metadata:
+      StackeryName: runthething
 Parameters:
   StackeryStackTagName:
     Type: String
