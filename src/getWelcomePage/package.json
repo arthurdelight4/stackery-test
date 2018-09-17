@@ -13,6 +13,6 @@
     "webpack-cli": "^3.1.0"
   },
   "scripts": {
-    "build": "webpack --config ../webpack.config.js "
+    "postinstall": "webpack --config ../webpack.config.js "
   }
 }
