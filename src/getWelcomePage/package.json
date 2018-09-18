@@ -2,9 +2,7 @@
   "private": true,
   "dependencies": {
     "aws-sdk": "~2",
-    "js-logger": "^1.4.1"
-  },
-  "devDependencies": {
+    "js-logger": "^1.4.1",
     "@babel/core": "^7.0.1",
     "babel-loader": "^8.0.2",
     "babel-plugin-js-logger": "^1.0.17",
@@ -13,6 +11,6 @@
     "webpack-cli": "^3.1.0"
   },
   "scripts": {
-    "postinstall": "webpack --config ../webpack.config.js "
+    "postinstall": "webpack --config ../webpack.config.js && ([ \"$NODE_ENV\" == 'production' ] && rm -rf node_modules || :)"
   }
 }
