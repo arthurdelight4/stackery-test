@@ -11,7 +11,7 @@
     "webpack-cli": "^3.1.0"
   },
   "scripts": {
-    "postinstall": "webpack --config ../webpack.config.js && ([ \"$NODE_ENV\" == 'production' ] && rm -rf node_modules || :)",
+    "postinstall": "webpack --config ../webpack.config.js",
     "build": "webpack --config ../webpack.config.js"
   }
 }
