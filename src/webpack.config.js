@@ -20,6 +20,30 @@ module.exports = {
         test: /\.js?$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
+        options: {
+          "presets": [
+            [ "@babel/env", {
+                "targets": {
+                  "node": "8.10"
+                }
+              }
+            ]
+          ],
+          "plugins": [
+            [
+              "js-logger",
+              {
+                "format": {
+                  "level": 1,
+                  "separator": ".",
+                  "extensions": [ ".js", ".jsx" ],
+                  "project": false
+                }
+              }
+            ]
+          ]
+        }
+        
       },
     ],
   },
