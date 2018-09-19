@@ -10,7 +10,7 @@ Resources:
         - Stackery Stack ${StackeryStackTagName} Environment ${StackeryEnvironmentTagName} Function ${ResourceName}
         - ResourceName: getWelcomePage
       CodeUri: src/getWelcomePage
-      Handler: dist/main.handler
+      Handler: bundle.handler
       Runtime: nodejs8.10
       MemorySize: 3008
       Timeout: 30

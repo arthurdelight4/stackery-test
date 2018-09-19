@@ -1,11 +1,15 @@
 // webpack.config.js
+const path = require('path');
 
 module.exports = {
   target: 'node',
   externals: [
     'aws-sdk', // aws-sdk included in Lambda
   ],
-  entry: './index.js',
+  entry: './src/index.js',
+  output: {
+    filename: '../bundle.js',
+  },
   module: {
     rules: [
       {
