@@ -1,7 +1,7 @@
 import './js_logger_init';
 import fs from 'fs';
 
-export const handler = async (event) => {
+const handler = async (event) => {
   // Log http request
   logger.debug(event);
 
@@ -17,3 +17,5 @@ export const handler = async (event) => {
 
   return response;
 }
+
+module.exports.handler = handler;
