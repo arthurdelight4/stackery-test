@@ -6,7 +6,7 @@ module.exports = {
   externals: [
     'aws-sdk', // aws-sdk included in Lambda
   ],
-  entry: './src/index.js',
+  entry: './index.js',
   output: {
     filename: '../bundle.js',
   },
