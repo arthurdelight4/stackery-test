@@ -19,7 +19,7 @@ module.exports = {
       {
         test: /\.js?$/,
         loader: 'babel-loader',
-        exclude: /node_modules/,
+        exclude: [/node_modules/, /bundle/, /__stackery/],
         options: {
           "presets": [
             [ "@babel/env", {
